@@ -1,3 +1,4 @@
+// app.component.ts
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,4 +11,5 @@ export class AppComponent {
   oddNumbers = [1,3,5];
   evenNumbers = [2,4];
   onlyOdd = false;
+  value = 10;
 }
