@@ -16,7 +16,7 @@
             {{ odd }}
           </li>
         </div>
-        <div *ngIf="!onlyOdd">
+        <!-- <div *ngIf="!onlyOdd">
           <li
             class="list-group-item"
             *ngFor="let even of evenNumbers"
@@ -35,7 +35,19 @@
               {{ odd }}
             </li>
           </div>
-        </ng-template>
+        </ng-template> -->
+        <!-- Przy użyciu własnej dyrektywy strukturalnej unless -->
+
+        <div *appUnless="onlyOdd">
+          <li
+            class="list-group-item"
+            *ngFor="let even of evenNumbers"
+            [ngClass]="{odd: even % 2 !== 0}"
+            [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'}">
+            {{ even }}
+          </li>
+        </div>
+
       </ul>
       <p appBasicHighlight>Style me with basic directive</p>
       <p appBetterHighlight defaultColor="yellow" highlightColor="red">Style me with a better directive</p>
